@@ -1,0 +1,88 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'tech.ivanpopov.bodylogger'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "tech.ivanpopov.bodylogger"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.1.1'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+    implementation "androidx.legacy:legacy-support-core-utils:1.0.0"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    def composeBom = platform('androidx.compose:compose-bom:2022.10.00')
+    implementation(composeBom)
+
+    // For Health Platform
+    implementation "com.google.android.libraries.healthdata:health-data-api:$health_platform_version"
+
+    // For viewmodel support
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-compose:$navigation_compose_version"
+    implementation "androidx.hilt:hilt-navigation-compose:$hilt_navigation_compose_version"
+
+    // To bridge between ListenableFuture and suspend functions
+    implementation "androidx.concurrent:concurrent-futures-ktx:$concurrent_futures_version"
+
+    // Icons
+    implementation "androidx.compose.material:material-icons-extended"
+
+    implementation "androidx.compose.ui:ui"
+    implementation "androidx.compose.material:material"
+    implementation "androidx.compose.ui:ui-tooling-preview"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.activity:activity-compose:$activity_compose_version"
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    debugImplementation "androidx.compose.ui:ui-tooling"
+
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:1.1.5"
+
+
+    // Required -- JUnit 4 framework
+    testImplementation "junit:junit:4.13.2"
+    // Optional -- Robolectric environment
+    testImplementation "androidx.test:core:1.5.0"
+
+}
