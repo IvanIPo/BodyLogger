@@ -76,6 +76,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
     implementation "androidx.activity:activity-compose:$activity_compose_version"
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'com.chargemap.compose:numberpicker:1.0.3'
 
     debugImplementation "androidx.compose.ui:ui-tooling"
 

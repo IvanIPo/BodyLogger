@@ -1,7 +1,5 @@
 package tech.ivanpopov.bodylogger.navigation
 
-const val UID_NAV_ARGUMENT = "uid"
-
 /**
  * Represent all Screens (Composables) in the app.
  */

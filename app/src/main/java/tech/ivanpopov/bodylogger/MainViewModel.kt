@@ -10,8 +10,7 @@ class MainViewModel : ViewModel() {
     private val _currentScreen = MutableStateFlow<Screen>(Screen.Main)
     val currentScreen: StateFlow<Screen> = _currentScreen
 
-    fun setNavigateTo(screen: Screen){
+    fun setNavigateTo(screen: Screen) {
         _currentScreen.value = screen
     }
-
 }

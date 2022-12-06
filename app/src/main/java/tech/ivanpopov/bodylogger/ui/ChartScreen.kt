@@ -1,4 +1,4 @@
-package tech.ivanpopov.bodylogger.ui.chart
+package tech.ivanpopov.bodylogger.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
