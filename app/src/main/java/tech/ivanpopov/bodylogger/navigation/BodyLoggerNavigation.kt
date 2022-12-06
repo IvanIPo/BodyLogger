@@ -7,6 +7,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import tech.ivanpopov.bodylogger.data.bodyLoggerState
 import tech.ivanpopov.bodylogger.ui.chart.ChartScreen
 import tech.ivanpopov.bodylogger.ui.history.HistoryScreen
 import tech.ivanpopov.bodylogger.ui.main.MainScreen
@@ -22,7 +23,7 @@ fun BodyLoggerNavigation(
             MainScreen()
         }
         composable(Screen.Chart.route) {
-            ChartScreen()
+            ChartScreen(bodyLoggerState.weights)
         }
         composable(Screen.History.route) {
             HistoryScreen()

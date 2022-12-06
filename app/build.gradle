@@ -49,6 +49,8 @@ android {
 dependencies {
     implementation "androidx.legacy:legacy-support-core-utils:1.0.0"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.test.ext:junit-ktx:1.1.4'
+    androidTestImplementation 'junit:junit:4.12'
     def composeBom = platform('androidx.compose:compose-bom:2022.10.00')
     implementation(composeBom)
 
